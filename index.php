@@ -143,7 +143,7 @@ $body .= "</table>
 ";
 $summary[] = array (
 	'name' => $name,
-	'cardnumber' => $cardnumber,
+	'cardnumber' => $card,
 	'total' => money_format('$%i',$account_total)
 	
 	);
@@ -152,7 +152,7 @@ $statement = "$header $body  <br pagebreak='true'/>";
 #$html = $statement;
 $pdf->AddPage();
 $pdf->writeHTML($statement, true, false, true, false, '');
-$fold = "<br> <br> <center><h1>$name</h1><h1>Grade $grade</h1></center>";
+$fold = "<br> <br><h1>Library Account Statement</h1><h2>$name</h2><h2>Grade $grade</h2><h3>View your account online at https://catalog.cucawarriors.com</h3>";
 
 $pdf->AddPage();
 $pdf->writeHTML($fold, true, false, true, false, '');
